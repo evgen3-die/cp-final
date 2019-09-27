@@ -1,0 +1,12 @@
+@import 'fonts';
+
+$font-family-sans-serif: 'GOST UI 2', sans-serif;
+$primary: #d63a36;
+
+#nprogress .bar {
+  background: $primary !important;
+}
+
+@import '~axios-progress-bar/dist/nprogress.css';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-vue/src/index.scss';
