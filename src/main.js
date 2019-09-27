@@ -7,8 +7,14 @@ import store from './store'
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+async function init () {
+  await store.dispatch('init')
+
+  new Vue({
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app')
+}
+
+init()
