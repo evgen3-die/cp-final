@@ -10,38 +10,13 @@
           :key="i"
           class="col-md-4 mb-4"
         >
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <small class="text-muted">
-                  {{ resume.city }}
-                </small>
-                <small class="font-weight-bold d-flex align-items-center">
-                  <font-awesome-icon
-                    icon="star"
-                    class="mr-1 text-warning"
-                  />
-                  {{ resume.rate }}%
-                </small>
-              </div>
-              <div class="d-flex justify-content-center mt-3">
-                <img
-                  class="rounded-circle photo"
-                  src="@/assets/images/user-placeholder.jpg"
-                  alt=""
-                >
-              </div>
-              <div class="text-center font-weight-bold mt-3">
-                <div class="text-muted">
-                  {{ resume.name }}
-                </div>
-                <div class="mt-2 text-warning">
-                  {{ resume.specialization }}
-                </div>
-              </div>
-            </div>
-            <router-link class="stretched-link" :to="`/resume/${resume.id}`" />
-          </div>
+          <profile-card
+            :city="resume.city"
+            :rate="resume.rate"
+            :name="resume.name"
+            :specialization="resume.specialization"
+            :to="`/resume/${resume.id}`"
+          />
         </div>
       </div>
     </b-container>
@@ -49,6 +24,8 @@
 </template>
 
 <script>
+import { ProfileCard } from '@/components'
+
 const RESUME = {
   city: 'Санкт-Петербург',
   rate: 98,
@@ -58,6 +35,9 @@ const RESUME = {
 }
 
 export default {
+  components: {
+    ProfileCard
+  },
   data () {
     return {
       resumeList: [
@@ -74,11 +54,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.photo {
-  border: 2px solid $primary;
-  width: 120px;
-  height: 120px;
-}
-</style>
