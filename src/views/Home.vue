@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-container class="mt-5">
     home
-  </div>
+  </b-container>
 </template>

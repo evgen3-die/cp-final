@@ -1,5 +1,5 @@
 <template>
-  <div>
-    {{ $route.params.id }}
-  </div>
+  <b-container class="mt-5">
+    resume {{ $route.params.id }}
+  </b-container>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-container class="mt-5">
     cabinet
-  </div>
+  </b-container>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-container class="mt-5">
     404
-  </div>
+  </b-container>
 </template>

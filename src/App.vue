@@ -1,8 +1,19 @@
 <template>
   <div class="app">
-    <router-view></router-view>
+    <app-header />
+    <router-view />
   </div>
 </template>
+
+<script>
+import { AppHeader } from '@/modules'
+
+export default {
+  components: {
+    AppHeader
+  }
+}
+</script>
 
 <style lang="scss">
 body {}
