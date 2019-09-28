@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { loadProgressBar } from 'axios-progress-bar'
 
-import token from './token'
+import accessData from './accessData'
 
 function authorizationInterceptor (config) {
-  if (token.get()) {
-    config.headers.authorization = `Bearer ${token.get()}`
+  const { token } = accessData.get()
+
+  if (token) {
+    config.headers.authorization = `Bearer ${token}`
   }
 
   return config

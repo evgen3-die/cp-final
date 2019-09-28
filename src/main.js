@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import { fetcher } from '@/utils'
+
+window.fetcher = fetcher
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

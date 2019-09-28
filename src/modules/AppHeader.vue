@@ -11,8 +11,37 @@
       <div class="divider mr-3"></div>
       Личный кабинет
     </router-link>
+    <a
+      v-if="isLogin"
+      href="#"
+      class="text-muted ml-3"
+      @click.prevent="onClickLogout"
+    >
+      Выход
+    </a>
   </b-container>
 </template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState([
+      'isLogin'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'logout'
+    ]),
+    async onClickLogout () {
+      await this.logout()
+      this.$router.push('/')
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .logo {
