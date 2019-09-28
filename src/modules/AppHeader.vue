@@ -1,7 +1,7 @@
 <template>
   <b-container class="d-flex flex-column flex-md-row align-items-center py-3">
-    <router-link class="my-0 mr-md-auto text-body logo" to="/">
-      Моя цифровая карьера
+    <router-link class="my-0 mr-md-auto" to="/">
+      <img src="@/assets/images/logo.svg" alt="">
     </router-link>
     <router-link class="btn btn-outline-primary d-flex" to="/login">
       <font-awesome-icon
@@ -44,14 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo {
-  font-size: 14px;
-  line-height: 1.2;
-  font-weight: 700;
-  text-transform: uppercase;
-  max-width: 140px;
-}
-
 .divider {
   border-left: 1px solid;
 }
