@@ -1,5 +1,13 @@
 <template>
-  <b-container class="my-5">
-    home
+  <b-container class="mb-5">
+    <banner />
   </b-container>
 </template>
+
+<script>
+import { Banner } from '@/modules'
+
+export default {
+  components: { Banner }
+}
+</script>
