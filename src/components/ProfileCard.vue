@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card rounded-lg">
     <div class="card-body">
       <div class="d-flex">
         <small
