@@ -1,10 +1,10 @@
 <template>
   <b-container class="my-5">
     <div class="bg-white rounded-lg p-5">
-      <h1 class="h3 mb-4">Авторизация</h1>
+      <h1 class="h3 mb-4">{{ pageTitle }}</h1>
 
       <b-form @submit.prevent="onSubmit">
-        <b-form-group label="Выберите роль на проекте">
+        <b-form-group class="mb-4" label="Выберите роль на проекте">
           <b-form-radio-group v-model="role">
             <b-form-radio value="seeker">Соискатель</b-form-radio>
             <b-form-radio value="employer">Работодатель</b-form-radio>
@@ -37,8 +37,12 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { meta } from '@/mixins'
 
 export default {
+  mixins: [
+    meta('Авторизация')
+  ],
   data () {
     return {
       role: 'seeker',

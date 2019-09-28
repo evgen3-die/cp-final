@@ -3,6 +3,7 @@ import Vue from 'vue'
 import { faUser, faStar } from '@fortawesome/free-solid-svg-icons'
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Meta from 'vue-meta'
 
 import App from './App.vue'
 import router from './router'
@@ -13,6 +14,7 @@ window.fetcher = fetcher
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(Meta)
 
 fontAwesomeLibrary.add(faUser, faStar)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
