@@ -1,6 +1,6 @@
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faStar } from '@fortawesome/free-solid-svg-icons'
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -11,7 +11,7 @@ import store from './store'
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 
-fontAwesomeLibrary.add(faUser)
+fontAwesomeLibrary.add(faUser, faStar)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 async function init () {

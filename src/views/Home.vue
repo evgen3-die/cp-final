@@ -1,13 +1,16 @@
 <template>
-  <b-container class="mb-5">
-    <banner />
-  </b-container>
+  <div class="home">
+    <b-container class="mb-5">
+      <banner />
+    </b-container>
+    <resume-list />
+  </div>
 </template>
 
 <script>
-import { Banner } from '@/modules'
+import { Banner, ResumeList } from '@/modules'
 
 export default {
-  components: { Banner }
+  components: { Banner, ResumeList }
 }
 </script>
