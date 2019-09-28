@@ -4,32 +4,37 @@
       <h1 class="h3 mb-4">{{ pageTitle }}</h1>
 
       <b-form @submit.prevent="onSubmit">
-        <b-form-group class="mb-4" label="Выберите роль на проекте">
+        <b-form-group class="mb-4" label="Выберите роль на проекте:">
           <b-form-radio-group v-model="role">
             <b-form-radio value="seeker">Соискатель</b-form-radio>
             <b-form-radio value="employer">Работодатель</b-form-radio>
             <b-form-radio value="agency">Гос. учреждение</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
-        <b-form-group>
+        <b-form-group label="Электронная почта">
           <b-form-input
             v-model="email"
-            placeholder="Электронная почта"
+            placeholder="Ваша электронная почта"
             required
             type="email"
           />
         </b-form-group>
-        <b-form-group>
+        <b-form-group label="Пароль">
           <b-form-input
             v-model="password"
-            placeholder="Пароль"
+            placeholder="Ваш пароль"
             required
             type="password"
           />
         </b-form-group>
-        <button :disabled="isLoading" class="btn btn-primary btn-lg px-4 text-white mt-4">
-          Войти
-        </button>
+        <div class="d-flex justify-content-center">
+          <button :disabled="isLoading" class="btn btn-primary btn-lg px-4 text-white mt-4 mb-0">
+            Войти
+          </button>
+        </div>
+        <b-alert :show="isError" class="mt-4 mb-0" variant="danger">
+          Неверные электронная почта или пароль
+        </b-alert>
       </b-form>
     </div>
   </b-container>
@@ -48,7 +53,8 @@ export default {
       role: 'seeker',
       email: '',
       password: '',
-      isLoading: false
+      isLoading: false,
+      isError: false
     }
   },
   methods: {
@@ -57,6 +63,7 @@ export default {
     ]),
     async onSubmit () {
       this.isLoading = true
+      this.isError = false
 
       try {
         await this.login({
@@ -67,6 +74,7 @@ export default {
 
         this.$router.push('/cabinet')
       } catch (e) {
+        this.isError = true
         throw e
       } finally {
         this.isLoading = false
@@ -78,6 +86,11 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  max-width: 754px;
+  max-width: 560px;
+}
+
+.btn {
+  width: 100%;
+  max-width: 300px;
 }
 </style>
