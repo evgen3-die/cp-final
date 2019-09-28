@@ -1,5 +1,5 @@
 <template>
-  <b-container class="mt-5">
+  <b-container class="my-5">
     login
   </b-container>
 </template>
